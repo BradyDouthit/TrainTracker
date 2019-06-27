@@ -12,6 +12,11 @@ var firebaseConfig = {
 
 var database = firebase.database();
 
+var name = "";
+var destination = "";
+var time = "";
+var frequency ="";
+
 $("#submit-button").on("click", function(event) {
     event.preventDefault();
     var name = $("#train-name").val().trim();
@@ -19,11 +24,14 @@ $("#submit-button").on("click", function(event) {
     var time = $("#train-time").val().trim();
     var frequency = $("#train-frequency").val().trim();
     console.log("Submit ->");
-    database.ref().set({
+    database.ref().push({
         name: name,
         destination: destination,
         time: time,
         frequency: frequency
     });
     console.log("<- Submit");
+});
+database.ref().on("child_added", function(childSnapshot) {
+    $("tbody").append('<tr class="tab-row"><td class="name">' + childSnapshot.val().name + '<td class="destination">' + childSnapshot.val().destination + '<td class="time">' + childSnapshot.val().time + '<td class="frequency">' + childSnapshot.val().frequency);
 });
