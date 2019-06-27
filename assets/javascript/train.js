@@ -33,5 +33,5 @@ $("#submit-button").on("click", function(event) {
     console.log("<- Submit");
 });
 database.ref().on("child_added", function(childSnapshot) {
-    $("tbody").append('<tr class="tab-row"><td class="name">' + childSnapshot.val().name + '<td class="destination">' + childSnapshot.val().destination + '<td class="time">' + childSnapshot.val().time + '<td class="frequency">' + childSnapshot.val().frequency);
+    $("tbody").append('<tr class="tab-row"><td class="name">' + childSnapshot.val().name + '<td class="destination">' + childSnapshot.val().destination + '<td class="frequency">' + childSnapshot.val().frequency + '<td class="time">' + childSnapshot.val().time);
 });
