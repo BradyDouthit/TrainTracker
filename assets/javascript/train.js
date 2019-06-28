@@ -16,6 +16,8 @@ var name = "";
 var destination = "";
 var time = "";
 var frequency ="";
+var currentTime = new moment().format("HH:mm");
+console.log(currentTime)
 
 $("#submit-button").on("click", function(event) {
     event.preventDefault();
