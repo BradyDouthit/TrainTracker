@@ -15,16 +15,8 @@ var database = firebase.database();
 var name = "";
 var destination = "";
 var firstTime = "12:00";
-var frequency = 60;
-var convertedTime = moment(firstTime, "HH:mm").subtract(1, "years");
-var currentTime = moment();
-console.log(currentTime.minutes())
-var timeDifference = moment().diff(moment(convertedTime), "minutes");
-var remainder = timeDifference % frequency;
-var minutesAway = frequency - remainder;
-console.log(minutesAway);
-var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm");
-console.log(nextArrival);
+var frequency = Number;
+
 
 
 $("#submit-button").on("click", function (event) {
@@ -41,7 +33,7 @@ $("#submit-button").on("click", function (event) {
     var remainder = timeDifference % frequency;
     var minutesAway = frequency - remainder;
     console.log(minutesAway);
-    var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm");
+    var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
     console.log(nextArrival);
     database.ref().push({
         name: name,
