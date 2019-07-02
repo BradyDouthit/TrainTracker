@@ -26,11 +26,13 @@ $("#submit-button").on("click", function (event) {
     var destination = $("#train-destination").val().trim();
     var firstTime = $("#train-time").val().trim();
     var frequency = $("#train-frequency").val().trim();
-    var convertedTime = moment(firstTime, "HH:mm").subtract(1, "years");
     var currentTime = moment();
-    console.log(currentTime.minutes())
-    var timeDifference = moment().diff(moment(convertedTime), "minutes");
+    var momentNumberFirstTime = moment(firstTime, "HH:mm");
+    console.log("currentTime: " + currentTime)
+    var timeDifference = currentTime.diff(momentNumberFirstTime, "minutes");
+    console.log("timedif: " + timeDifference)
     var remainder = timeDifference % frequency;
+    console.log("remainder: " + remainder)
     var minutesAway = frequency - remainder;
     console.log(minutesAway);
     var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
