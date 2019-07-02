@@ -3,6 +3,8 @@ html {
 }
 .jumbotron {
     text-align: center;
+    background-image: linear-gradient(to right, black , lightgray);
+    color: white;
 }
 .content {
     width: 75%;
@@ -13,4 +15,43 @@ html {
 body {
     background-image: url("../images/train.jpg");
 
+}
+.card {
+    background-image: linear-gradient(to right, black , lightgray);
+    color: white;
+}
+#train-name {
+    border-image: linear-gradient(lightgray, black) 5;
+    color: white;
+    width: 97%;
+    margin-left: 1.5%;
+}
+#train-destination {
+    border-image: linear-gradient(lightgray, black) 5;
+    color: white;
+    width: 97%;
+    margin-left: 1.5%;
+}
+#train-frequency {
+    border-image: linear-gradient(lightgray, black) 5;
+    color: white;
+    width: 97%;
+    margin-left: 1.5%;
+}
+#train-time {
+    border-image: linear-gradient(lightgray, black) 5;
+    color: white;
+    width: 97%;
+    margin-left: 1.5%;
+}
+th {
+    color: white;
+}
+td {
+    color: white;
+}
+#submit-button {
+    background-image: linear-gradient(to right, black, lightgray);
+    width: 100px;
+    margin-left: 1.5%;
 }
